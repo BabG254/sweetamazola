@@ -41,7 +41,7 @@ const Navbar = () => {
             <img
               src="/logo.png"
               alt="Amazola Sweet Lounge"
-              className="h-12 w-auto max-w-[180px] object-contain group-hover:scale-105 transition-transform duration-300"
+              className="h-16 w-auto max-w-[220px] object-contain group-hover:scale-105 transition-transform duration-300"
             />
           </Link>
 

@@ -3,8 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import SectionHeader from "@/components/SectionHeader";
 import RevealSection from "@/components/RevealSection";
 import orphanageImg from "@/assets/orphanage.jpg";
-import heroFoodImg from "@/assets/hero-food.jpg";
-import interiorImg from "@/assets/restaurant-interior.jpg";
+import fountain1Img from "@/assets/fountain1.jpg";
 import { Heart, CheckCircle, Users, BookOpen, Home, MapPin, Copy, Phone, ChevronLeft, ChevronRight } from "lucide-react";
 
 const impacts = [
@@ -20,14 +19,15 @@ const slides = [
     caption: "Providing shelter, love, and hope to children across Kenya",
   },
   {
-    img: heroFoodImg,
+    img: fountain1Img,
     title: "Every Meal, a Mission",
     caption: "Your dining experience at Amazola directly supports Fountain of Hope",
   },
   {
-    img: interiorImg,
+    img: orphanageImg,
     title: "Dining with Purpose",
     caption: "Our warmth extends beyond these walls — into the community",
+    style: { objectPosition: "center 30%" },
   },
 ];
 

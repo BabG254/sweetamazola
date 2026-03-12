@@ -1,5 +1,4 @@
 import SectionHeader from "@/components/SectionHeader";
-import MenuCard from "@/components/MenuCard";
 import RevealSection from "@/components/RevealSection";
 import breakfastImg from "@/assets/breakfast.jpg";
 import africanDishImg from "@/assets/african-dish.jpg";
@@ -185,50 +184,60 @@ const MenuPage = () => (
           />
         </RevealSection>
 
-        <div className="space-y-24">
-          {menuData.map((section, i) => (
-            <RevealSection key={section.section} delay={0.1}>
-              {/* Section header */}
-              <div className="mb-8 text-center">
-                <h2 className="font-display text-3xl sm:text-4xl font-bold uppercase tracking-widest text-foreground">
-                  {section.section}
-                </h2>
-                <div className="w-20 h-1 bg-primary mx-auto mt-3 rounded-full" />
+        <div className="space-y-20">
+          {menuData.map((section) => (
+            <RevealSection key={section.section} delay={0.05}>
+              {/* Cinematic section banner */}
+              <div className="relative rounded-3xl overflow-hidden h-44 sm:h-56 mb-10 shadow-2xl">
+                <img
+                  src={section.img}
+                  alt={section.section}
+                  className="w-full h-full object-cover scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-transparent" />
+                <div className="absolute inset-0 flex items-center px-8 sm:px-14">
+                  <div>
+                    <p className="text-primary text-xs uppercase tracking-[0.3em] font-semibold mb-2">Amazola Sweet Lounge</p>
+                    <h2 className="font-display text-3xl sm:text-5xl font-bold text-white uppercase tracking-widest">
+                      {section.section}
+                    </h2>
+                    <div className="w-16 h-0.5 bg-primary mt-3 rounded-full" />
+                  </div>
+                </div>
               </div>
 
-              <div className="grid md:grid-cols-[1fr_2fr] gap-10 items-start">
-                {/* Image — sticky on desktop */}
-                <div className={`${i % 2 === 1 ? "md:order-2" : ""}`}>
-                  <div className="rounded-3xl overflow-hidden shadow-xl group md:sticky md:top-24">
-                    <img
-                      src={section.img}
-                      alt={section.section}
-                      className="w-full h-72 md:h-96 object-cover group-hover:scale-105 transition-transform duration-700"
-                    />
+              {/* Subcategory grid */}
+              <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                {section.subCategories.map((sub) => (
+                  <div key={sub.name} className="glass-card p-5 flex flex-col">
+                    {/* Subcategory header */}
+                    <div className="flex items-center gap-2.5 mb-4 pb-3 border-b border-primary/20">
+                      <span className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                      <h3 className="font-display text-xs font-bold text-primary uppercase tracking-[0.2em] leading-tight">
+                        {sub.name}
+                      </h3>
+                    </div>
+                    {/* Item rows */}
+                    <ul className="flex-1 space-y-2">
+                      {sub.items.map((item) => (
+                        <li key={item.name} className="flex items-center gap-3 group py-0.5">
+                          <span className="flex-1 text-sm text-foreground/75 group-hover:text-foreground transition-colors leading-snug">
+                            {item.name}
+                          </span>
+                          <span className="text-xs font-bold text-primary whitespace-nowrap shrink-0 bg-primary/10 px-2.5 py-0.5 rounded-full">
+                            {item.price}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                </div>
-
-                {/* Subcategory cards grid */}
-                <div className={`${i % 2 === 1 ? "md:order-1" : ""}`}>
-                  <div className="grid sm:grid-cols-2 gap-5">
-                    {section.subCategories.map((sub) => (
-                      <div key={sub.name} className="glass-card p-5">
-                        <h3 className="font-display text-base font-bold text-primary mb-3 pb-2 border-b border-primary/20 uppercase tracking-wide">
-                          {sub.name}
-                        </h3>
-                        {sub.items.map((item) => (
-                          <MenuCard key={item.name} {...item} />
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                ))}
               </div>
             </RevealSection>
           ))}
         </div>
 
-        {/* Footer note from menu */}
+        {/* Footer note */}
         <RevealSection delay={0.2}>
           <div className="mt-20 glass-card p-8 max-w-2xl mx-auto text-center">
             <p className="text-muted-foreground italic text-lg mb-4">

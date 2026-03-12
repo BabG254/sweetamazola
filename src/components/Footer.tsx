@@ -32,7 +32,7 @@ const Footer = () => (
             <img
               src="/logo.png"
               alt="Amazola Sweet Lounge"
-              className="h-16 w-auto max-w-[220px] object-contain"
+              className="h-20 w-auto max-w-[260px] object-contain"
             />
           </div>
           <p className="text-muted-foreground text-sm leading-relaxed max-w-xs">
