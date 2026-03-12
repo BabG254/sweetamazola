@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito+Sans:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 120 5% 6%;
+    --foreground: 40 20% 95%;
+
+    --card: 120 5% 10%;
+    --card-foreground: 40 20% 95%;
+
+    --popover: 120 5% 10%;
+    --popover-foreground: 40 20% 95%;
+
+    --primary: 125 52% 34%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 30 80% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 120 5% 15%;
+    --muted-foreground: 120 5% 65%;
+
+    --accent: 30 80% 55%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 120 5% 18%;
+    --input: 120 5% 18%;
+    --ring: 125 52% 34%;
+
+    --radius: 0.75rem;
+
+    --forest-dark: 120 8% 8%;
+    --forest-card: 120 6% 12%;
+    --forest-glow: 125 60% 40%;
+    --warm-orange: 30 80% 55%;
+    --warm-gold: 40 70% 50%;
+
+    --sidebar-background: 120 5% 8%;
+    --sidebar-foreground: 0 0% 95%;
+    --sidebar-primary: 125 52% 34%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 120 5% 15%;
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: 120 5% 18%;
+    --sidebar-ring: 125 52% 34%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background: hsl(125 52% 34% / 0.3);
+    color: hsl(40 20% 95%);
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 py-20 sm:py-24 lg:py-32;
+  }
+
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/40 rounded-2xl;
+  }
+
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(125 60% 45%), hsl(40 70% 55%));
+  }
+
+  .glow-green {
+    box-shadow: 0 0 40px -8px hsl(125 60% 40% / 0.35),
+                0 0 80px -20px hsl(125 60% 40% / 0.15);
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 40px -8px hsl(30 80% 55% / 0.3);
+  }
+
+  .hero-overlay {
+    background: linear-gradient(
+      to bottom,
+      hsl(120 8% 6% / 0.2) 0%,
+      hsl(120 8% 6% / 0.5) 40%,
+      hsl(120 8% 6% / 0.92) 85%,
+      hsl(120 8% 6% / 1) 100%
+    );
+  }
+
+  .leaf-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 5c-5 10-15 15-25 15 5 10 15 20 25 35 10-15 20-25 25-35-10 0-20-5-25-15z' fill='hsl(125,52%25,34%25)' fill-opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  .divider-leaf {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(125 52% 34% / 0.3), transparent);
+  }
+
+  /* Elegant horizontal rule */
+  .hr-ornament {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .hr-ornament::before,
+  .hr-ornament::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(125 52% 34% / 0.25));
+  }
+  .hr-ornament::after {
+    background: linear-gradient(90deg, hsl(125 52% 34% / 0.25), transparent);
+  }
+
+  /* Subtle noise texture */
+  .noise-bg {
+    position: relative;
+  }
+  .noise-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+}
