@@ -211,7 +211,7 @@ const FountainOfHope = () => {
                   The Fountain of Hope Rescue Center was founded on a simple but powerful belief — that every child, regardless of circumstance, deserves shelter, love, education, and a future worth dreaming about.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Located in Kabuku, Limuru, Kenya, the center provides a permanent home for orphaned and vulnerable children. Our dedicated staff and caregivers pour themselves into creating a family environment where healing, growth, and joy are possible every single day.
+                  The center provides a permanent home for orphaned and vulnerable children in Kenya. Our dedicated staff and caregivers pour themselves into creating a family environment where healing, growth, and joy are possible every single day.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
                   Amazola Sweet Lounge was born with this center at its heart. A portion of every meal served goes directly toward keeping the lights on, the children fed, and their school fees paid. When you dine with us, you become part of that story.
@@ -222,7 +222,7 @@ const FountainOfHope = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-foreground text-sm">Fountain of Hope Rescue Center</p>
-                    <p className="text-muted-foreground text-xs">Kabuku, Limuru, Kenya</p>
+                    <p className="text-muted-foreground text-xs">Verified rescue center map pin available below</p>
                   </div>
                 </div>
               </div>
@@ -323,15 +323,30 @@ const FountainOfHope = () => {
                   <MapPin className="h-6 w-6 text-primary" /> Find Fountain of Hope
                 </h2>
               </div>
-              <a href="https://share.google/QzUocqNcIewFDCmam" target="_blank" rel="noopener noreferrer"
+              <a href="https://share.google/id99RsRIGTJkKtiVZ" target="_blank" rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary/10 text-primary text-sm font-semibold hover:bg-primary/20 transition-colors whitespace-nowrap">
-                <MapPin className="h-4 w-4" /> Open in Google Maps
+                <MapPin className="h-4 w-4" /> Open Exact Rescue Center Pin
               </a>
             </div>
-            <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/30 h-80">
-              <iframe title="Fountain of Hope Location"
-                src="https://maps.google.com/maps?q=Kabuku,+Limuru,+Kenya&output=embed"
-                width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" />
+            <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-6">
+              <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/30 h-80">
+                <img src={fountain1Img} alt="Rescue center location and community" className="w-full h-full object-cover" />
+              </div>
+              <div className="glass-card p-7 flex flex-col justify-center">
+                <p className="text-xs uppercase tracking-[0.25em] text-primary font-semibold mb-3">Verified Directions</p>
+                <h3 className="font-display text-2xl font-bold text-foreground mb-3">Use the rescue center's exact Google Maps pin</h3>
+                <p className="text-muted-foreground leading-relaxed mb-5">
+                  To avoid confusion with the restaurant location, we have linked the verified rescue center map pin directly. Tap below for the exact route and live directions.
+                </p>
+                <a
+                  href="https://share.google/id99RsRIGTJkKtiVZ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-primary text-primary-foreground font-semibold hover:shadow-[0_0_40px_-8px_hsl(125_60%_40%_/_0.45)] transition-all duration-300"
+                >
+                  <MapPin className="h-4 w-4" /> Open Rescue Center Directions
+                </a>
+              </div>
             </div>
           </RevealSection>
         </div>
