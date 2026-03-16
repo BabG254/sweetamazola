@@ -154,7 +154,7 @@ const Contact = () => {
             <div className="mt-10 max-w-5xl mx-auto rounded-3xl overflow-hidden shadow-xl border border-border/30 h-72 sm:h-80">
               <iframe
                 title="Amazola Sweet Lounge Location"
-                src="https://maps.google.com/maps?q=Kabuku,+Limuru,+Kenya&output=embed"
+                src="https://maps.google.com/maps?q=-1.1556793,36.6709113&z=16&output=embed"
                 width="100%"
                 height="100%"
                 style={{ border: 0 }}

@@ -4,6 +4,8 @@ import RevealSection from "@/components/RevealSection";
 import orphanageImg from "@/assets/orphanage.jpg";
 import fountain1Img from "@/assets/fountain1.jpg";
 import breakfastImg from "@/assets/breakfast.jpg";
+import foh2Img from "@/assets/foh2.png";
+import foh3Img from "@/assets/foh3.jpg";
 import {
   Heart, CheckCircle, Users, BookOpen, Home, MapPin,
   Phone, ChevronLeft, ChevronRight, Smartphone, CreditCard,
@@ -218,7 +220,7 @@ const FountainOfHope = () => {
                 </p>
                 <div className="flex items-center gap-4 pt-2">
                   <div className="w-12 h-12 rounded-full overflow-hidden shrink-0 ring-2 ring-primary/30">
-                    <img src={orphanageImg} alt="Children" className="w-full h-full object-cover" />
+                    <img src={foh2Img} alt="Children" className="w-full h-full object-cover" />
                   </div>
                   <div>
                     <p className="font-semibold text-foreground text-sm">Fountain of Hope Rescue Center</p>
@@ -228,13 +230,13 @@ const FountainOfHope = () => {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-3xl overflow-hidden shadow-xl row-span-2">
-                  <img src={orphanageImg} alt="Fountain of Hope" className="w-full h-full object-cover" />
+                  <img src={foh2Img} alt="Fountain of Hope" className="w-full h-full object-cover" />
                 </div>
                 <div className="rounded-3xl overflow-hidden shadow-xl">
                   <img src={fountain1Img} alt="Children at the center" className="w-full h-64 object-cover" />
                 </div>
                 <div className="rounded-3xl overflow-hidden shadow-xl">
-                  <img src={breakfastImg} alt="Meals for children" className="w-full h-full object-cover" />
+                  <img src={foh3Img} alt="Meals for children" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
@@ -330,7 +332,16 @@ const FountainOfHope = () => {
             </div>
             <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-6">
               <div className="rounded-3xl overflow-hidden shadow-2xl border border-border/30 h-80">
-                <img src={fountain1Img} alt="Rescue center location and community" className="w-full h-full object-cover" />
+                <iframe
+                  title="Fountain of Hope Rescue Center Location"
+                  src="https://maps.google.com/maps?q=-1.1553409,36.6676932&z=17&output=embed"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                />
               </div>
               <div className="glass-card p-7 flex flex-col justify-center">
                 <p className="text-xs uppercase tracking-[0.25em] text-primary font-semibold mb-3">Verified Directions</p>
